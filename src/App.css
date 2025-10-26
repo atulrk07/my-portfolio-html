@@ -1,0 +1,123 @@
+/* ===== App Styles ===== */
+.App {
+  min-height: 100vh;
+  position: relative;
+}
+
+/* ===== Enhanced Gradient Background ===== */
+.App::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 80%, rgba(255, 107, 53, 0.2) 0%, transparent 60%),
+    radial-gradient(circle at 80% 20%, rgba(247, 147, 30, 0.2) 0%, transparent 60%),
+    radial-gradient(circle at 40% 40%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 60% 60%, rgba(247, 147, 30, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 10% 10%, rgba(255, 107, 53, 0.05) 0%, transparent 40%),
+    radial-gradient(circle at 90% 90%, rgba(247, 147, 30, 0.05) 0%, transparent 40%);
+  pointer-events: none;
+  z-index: -1;
+  animation: backgroundShift 25s ease-in-out infinite;
+}
+
+@keyframes backgroundShift {
+  0%, 100% {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  25% {
+    transform: translateX(-30px) translateY(-15px) scale(1.05);
+  }
+  50% {
+    transform: translateX(30px) translateY(15px) scale(0.95);
+  }
+  75% {
+    transform: translateX(-15px) translateY(30px) scale(1.02);
+  }
+}
+
+/* ===== Enhanced Floating Particles ===== */
+.App::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    radial-gradient(3px 3px at 20px 30px, rgba(255, 107, 53, 0.4), transparent),
+    radial-gradient(2px 2px at 40px 70px, rgba(247, 147, 30, 0.4), transparent),
+    radial-gradient(1px 1px at 90px 40px, rgba(255, 107, 53, 0.5), transparent),
+    radial-gradient(2px 2px at 130px 80px, rgba(247, 147, 30, 0.4), transparent),
+    radial-gradient(3px 3px at 160px 30px, rgba(255, 107, 53, 0.3), transparent),
+    radial-gradient(1px 1px at 200px 60px, rgba(247, 147, 30, 0.4), transparent),
+    radial-gradient(2px 2px at 250px 90px, rgba(255, 107, 53, 0.3), transparent),
+    radial-gradient(1px 1px at 300px 20px, rgba(247, 147, 30, 0.4), transparent);
+  background-repeat: repeat;
+  background-size: 350px 200px;
+  pointer-events: none;
+  z-index: -1;
+  animation: particleFloat 20s linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(0) translateX(0) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-150px) translateX(100px) rotate(360deg);
+  }
+}
+
+/* ===== Additional Background Effects ===== */
+.App {
+  position: relative;
+}
+
+.App::before {
+  animation: backgroundShift 25s ease-in-out infinite, glowPulse 8s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* ===== Animated Grid Lines ===== */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: 
+    linear-gradient(rgba(255, 107, 53, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 107, 53, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -2;
+  animation: gridMove 30s linear infinite;
+}
+
+@keyframes gridMove {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(50px, 50px);
+  }
+}
+
+/* ===== Section Spacing ===== */
+section {
+  position: relative;
+  z-index: 1;
+}
